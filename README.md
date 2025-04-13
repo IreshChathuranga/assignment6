@@ -1,2 +1,2 @@
-Iresh Chathuranga
-assignment 06
+# Iresh Chathuranga
+## Assignment 06
