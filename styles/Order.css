@@ -1,0 +1,183 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+.navigation{
+    background-color: #E71864;
+}
+.logo{
+    width: 90px;
+    height: 90px;
+}
+.logout{
+    width: 70px;
+    height: 50px;
+}
+.order-card{
+    width: 300px;
+    height: 60px;
+    left: 90px;
+}
+.order-img{
+    max-width: 50px;
+    height: 50px;
+}
+.order-tittle{
+    top: 15px;
+    bottom: 0;
+    left: 60px;
+    margin: auto;
+}
+.button-card{
+    width: 200px;
+    height: 100px;
+    gap: 10px;
+    background-color: transparent;
+    top: 28px;
+    left: 30px;
+}
+.center-card{
+    width: 1260px;
+    height: 830px;
+    background-color: rgba(217,217,217,0.66);
+    top: 550px;
+}
+.add-img{
+    max-width: 22px;
+    height: 22px;
+    left: 6px;
+}
+.search-cust-card{
+    width: 500px;
+    height: 380px;
+    gap: 10px;
+    top: 28px;
+    left: 30px;
+    background-color: rgba(231,24,165,0.37);
+}
+.cust-tittlebar{
+    background-color: #E718A5;
+}
+.address-lable{
+    top: 165px;
+    left: 25px;
+}
+.address-input{
+    top: 190px;
+    left: 20px;
+}
+.email-lable{
+    top: 235px;
+    left: 25px;
+}
+.email-input{
+    top: 262px;
+    left: 20px;
+}
+.number-lable{
+    top: 235px;
+    right: 120px;
+}
+.number-input{
+    top: 262px;
+    right: 20px;
+}
+.clear-btn{
+    top: 320px;
+    right: 25px;
+}
+.search-card{
+    width: 500px;
+    height: 380px;
+    gap: 10px;
+    top: 28px;
+    right: 30px;
+    background-color: rgba(162, 15, 181, 0.44);
+}
+.tittlebar{
+    background-color: #A20FB5;
+}
+.tittlebar h5{
+    left: 70px;
+}
+.search-input{
+    left: 20px;
+}
+.itemname-lable{
+    top: 95px;
+    left: 25px;
+}
+.itemname-input{
+    top: 120px;
+    left: 20px;
+}
+.search-button{
+    width: 100px;
+    height: 40px;
+    top: 50px;
+    right: 25px;
+}
+.itemprice-lable{
+    top: 165px;
+    left: 25px;
+}
+.itemprice-input{
+    top: 190px;
+    left: 20px;
+}
+.qty-lable{
+    top: 165px;
+    right: 185px;
+}
+.qty-input{
+    top: 190px;
+    right: 25px;
+}
+.orderqty-lable{
+    top: 235px;
+    left: 25px;
+}
+.orderqty-input{
+    top: 262px;
+    left: 20px;
+}
+.add-item-btn{
+    top: 320px;
+    left: 20px;
+}
+.subtotal-lable{
+    top: 235px;
+    right: 155px;
+}
+.subtotal-input{
+    top: 262px;
+    right: 25px;
+}
+.clear1{
+    top: 320px;
+    left: 180px;
+}
+.btn-addtocard{
+    top: 320px;
+    right: 25px;
+}
+.table-card{
+    width: 1200px;
+    height: 150px;
+    top: 450px;
+}
+.button-set{
+    width: 400px;
+    right: 30px;
+    bottom: 80px;
+    background-color: transparent;
+}
+.delete-btn{
+    width: 170px;
+    right: 0;
+}
+.popup-card{
+    width: 500px;
+    height: 600px;
+}

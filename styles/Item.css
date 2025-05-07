@@ -1,0 +1,89 @@
+body{
+    width: 100vw;
+    height: 100vh;
+}
+.navigation{
+    background-color: #E71864;
+}
+.logo{
+    width: 90px;
+    height: 90px;
+}
+.logout{
+    width: 70px;
+    height: 50px;
+}
+.item-card{
+    width: 300px;
+    height: 60px;
+    left: 90px;
+}
+.item-img{
+    max-width: 50px;
+    height: 50px;
+}
+.item-tittle{
+    top: 15px;
+    bottom: 0;
+    left: 60px;
+    margin: auto;
+}
+.button-card{
+    width: 200px;
+    height: 100px;
+    gap: 10px;
+    background-color: transparent;
+    top: 28px;
+    left: 30px;
+}
+.center-card{
+    width: 1260px;
+    height: 530px;
+    background-color: rgba(217,217,217,0.66);
+    top: 390px;
+}
+.add-img{
+    max-width: 22px;
+    height: 22px;
+    left: 6px;
+}
+.search-card{
+    width: 450px;
+    height: 150px;
+    gap: 10px;
+    top: 28px;
+    right: 30px;
+    background-color: rgba(162, 15, 181, 0.44);
+}
+.tittlebar{
+    background-color: #A20FB5;
+}
+.tittlebar h5{
+    left: 70px;
+}
+.search-button{
+    width: 100px;
+    height: 40px;
+    top: 100px;
+    left: 25px;
+    margin: auto;
+}
+.table-card{
+    width: 1200px;
+    height: 150px;
+    top: 230px;
+}
+.button-set{
+    width: 400px;
+    right: 30px;
+    bottom: 80px;
+    background-color: transparent;
+}
+.delete-btn{
+    width: 170px;
+    right: 0;
+}
+.popup-card{
+    width: 500px;
+    height: 600px;
+}
