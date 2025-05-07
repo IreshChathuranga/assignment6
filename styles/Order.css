@@ -148,7 +148,7 @@ body{
 }
 .subtotal-lable{
     top: 235px;
-    right: 155px;
+    right: 180px;
 }
 .subtotal-input{
     top: 262px;
@@ -167,15 +167,56 @@ body{
     height: 150px;
     top: 450px;
 }
+.total-lable{
+    top: 25px;
+    left: 30px;
+}
+.total-input{
+    top: 20px;
+    right: 30px;
+}
+.pay-card{
+    width: 400px;
+    height: 220px;
+    top: 600px;
+    right: 30px;
+    background-color: rgba(199, 15, 70, 0.4);
+}
+.bonus-input{
+    top: 70px;
+    right: 30px;
+}
+.discount{
+    top: 70px;
+    left: 15px;
+}
+.subamount-lable{
+    top: 125px;
+    left: 30px;
+}
+.subamount-input{
+    top: 120px;
+    right: 30px;
+}
 .button-set{
     width: 400px;
     right: 30px;
     bottom: 80px;
     background-color: transparent;
 }
-.delete-btn{
-    width: 170px;
+.btn-comformorder{
+    top: 170px;
+    right: 10px;
+}
+.btn-delete{
+    top: 170px;
+    left: 10px;
+}
+.btn-orderclear{
+    top: 170px;
     right: 0;
+    left: 0;
+    margin: auto;
 }
 .popup-card{
     width: 500px;

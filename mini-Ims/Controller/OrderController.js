@@ -74,6 +74,7 @@ $('#orderqty').on('input', function () {
     if (!isNaN(qty) && !isNaN(price)) {
         const subtotal = qty * price;
         $('#subtotal').val(subtotal.toFixed(2));
+        $('#total').val(subtotal.toFixed(2));
     } else {
         $('#subtotal').val('');
     }
@@ -139,4 +140,50 @@ $('#clear1').on('click', function () {
 
 $('#clear1').on('click', function () {
     $('#exampleModal input').val('');
+});
+
+$('#discount').on('click', function () {
+    const total = parseFloat($('#total').val());
+    const discountPercent = parseFloat($('#bouns').val());
+
+    if (isNaN(total) || isNaN(discountPercent)) {
+        Swal.fire({
+            title: "Please enter valid Total and Discount",
+            icon: "error",
+            timer: 1500,
+            showConfirmButton: false,
+        });
+        return;
+    }
+
+    const discountAmount = (total * discountPercent) / 100;
+
+    const discountedTotal = total - discountAmount;
+
+    $('#subamount').val(discountedTotal.toFixed(2));
+});
+
+$('#btn-orderclear').on('click', function () {
+    $('#total').val('');
+    $('#bouns').val('');
+    $('#subamount').val('');
+});
+
+$(document).on('click', '#order-tbody tr', function () {
+    $('#order-tbody tr').removeClass('selected-row');
+    $(this).addClass('selected-row');
+});
+
+$('#btn-delete').on('click', function () {
+    const selectedRow = $('#order-tbody tr.selected-row');
+    if (selectedRow.length === 0) {
+        Swal.fire({
+            title: "Please select a row to delete",
+            icon: "warning",
+            timer: 1500,
+            showConfirmButton: false,
+        });
+    } else {
+        selectedRow.remove();
+    }
 });
