@@ -1,10 +1,11 @@
-import {customers_db, item_db} from "../db/db.js";
-import CustomerModel from "../model/customerModel.js";
+import {customers_db, item_db ,orderdetails_db} from "../db/db.js";
 import ItemModel from "../model/itemModel.js";
+import OrderDetailsModel from "../model/orderDetailsModel.js";
 
 let savedCustomers = JSON.parse(localStorage.getItem("customers_db")) || [];
 savedCustomers.forEach(customer => customers_db.push(customer));
 let savedItems = JSON.parse(localStorage.getItem("item_db")) || [];
+
 savedItems.forEach(item => {
     let reconstructedItem = new ItemModel(
         item.iid,
@@ -14,6 +15,24 @@ savedItems.forEach(item => {
         item.isellingprice
     );
     item_db.push(reconstructedItem);
+});
+
+let savedOrders = JSON.parse(localStorage.getItem("orderdetails_db")) || [];
+savedOrders.forEach(order => {
+    let reconstructedOrder = new OrderDetailsModel(
+        order.oid,
+        order.cid,
+        order.cnumber,
+        order.iname,
+        order.isellingprice,
+        order.qty,
+        order.total,
+        order.discount,
+        order.subamount,
+        order.paid,
+        order.balance
+    );
+    orderdetails_db.push(reconstructedOrder);
 });
 
 $('#btnSearchCustomer').on('click', function(event) {
@@ -140,50 +159,4 @@ $('#clear1').on('click', function () {
 
 $('#clear1').on('click', function () {
     $('#exampleModal input').val('');
-});
-
-$('#discount').on('click', function () {
-    const total = parseFloat($('#total').val());
-    const discountPercent = parseFloat($('#bouns').val());
-
-    if (isNaN(total) || isNaN(discountPercent)) {
-        Swal.fire({
-            title: "Please enter valid Total and Discount",
-            icon: "error",
-            timer: 1500,
-            showConfirmButton: false,
-        });
-        return;
-    }
-
-    const discountAmount = (total * discountPercent) / 100;
-
-    const discountedTotal = total - discountAmount;
-
-    $('#subamount').val(discountedTotal.toFixed(2));
-});
-
-$('#btn-orderclear').on('click', function () {
-    $('#total').val('');
-    $('#bouns').val('');
-    $('#subamount').val('');
-});
-
-$(document).on('click', '#order-tbody tr', function () {
-    $('#order-tbody tr').removeClass('selected-row');
-    $(this).addClass('selected-row');
-});
-
-$('#btn-delete').on('click', function () {
-    const selectedRow = $('#order-tbody tr.selected-row');
-    if (selectedRow.length === 0) {
-        Swal.fire({
-            title: "Please select a row to delete",
-            icon: "warning",
-            timer: 1500,
-            showConfirmButton: false,
-        });
-    } else {
-        selectedRow.remove();
-    }
 });

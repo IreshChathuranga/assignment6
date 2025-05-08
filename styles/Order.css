@@ -165,38 +165,54 @@ body{
 .table-card{
     width: 1200px;
     height: 150px;
-    top: 450px;
+    top: 425px;
 }
 .total-lable{
     top: 25px;
-    left: 30px;
+    left: 20px;
 }
 .total-input{
     top: 20px;
-    right: 30px;
+    left: 100px;
 }
 .pay-card{
-    width: 400px;
-    height: 220px;
-    top: 600px;
+    width: 550px;
+    height: 235px;
+    top: 590px;
     right: 30px;
     background-color: rgba(199, 15, 70, 0.4);
 }
 .bonus-input{
-    top: 70px;
-    right: 30px;
+    top: 20px;
+    right: 20px;
 }
 .discount{
-    top: 70px;
-    left: 15px;
+    top: 20px;
+    right: 190px;
 }
 .subamount-lable{
-    top: 125px;
-    left: 30px;
+    top: 80px;
+    left: 20px;
 }
 .subamount-input{
-    top: 120px;
-    right: 30px;
+    top: 75px;
+    left: 100px;
+}
+.cash-lable{
+    top: 80px;
+    right: 230px;
+}
+.cash-input{
+    top: 75px;
+    right: 20px;
+}
+.blance-lable{
+    top: 135px;
+    left: 20px;
+}
+.blance-input{
+    top: 130px;
+    left: 100px;
 }
 .button-set{
     width: 400px;
@@ -204,16 +220,24 @@ body{
     bottom: 80px;
     background-color: transparent;
 }
+.orderid-lable{
+    top: 135px;
+    right: 200px;
+}
+.orderid-input{
+    top: 130px;
+    right: 20px;
+}
 .btn-comformorder{
-    top: 170px;
+    top: 185px;
     right: 10px;
 }
 .btn-delete{
-    top: 170px;
+    top: 185px;
     left: 10px;
 }
 .btn-orderclear{
-    top: 170px;
+    top: 185px;
     right: 0;
     left: 0;
     margin: auto;

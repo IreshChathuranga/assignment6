@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Items</title>
+    <title>Order Details</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="access/lib/normalize.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/Item.css">
+    <link rel="stylesheet" href="styles/Orderdetails.css">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&family=Bebas+Neue&family=Monoton&display=swap" rel="stylesheet">
 
 </head>
@@ -32,7 +32,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="Order.html">Add Order</a></li>
-                            <li><a class="dropdown-item" href="OrderDetails.html">Order Details</a></li>
+                            <li><a class="dropdown-item" href="#">Order Details</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -41,93 +41,80 @@
         </div>
     </nav>
 </header>
-<div class="card card-size position-absolute border-0 item-card">
-    <img src="access/images/item.png" class="img-fluid rounded-start position-absolute top-50 start-0 bottom-50 translate-middle item-img" alt="...">
-    <h5 class="card-title text-center fs-3 fw-bold position-absolute item-tittle">Items</h5>
-</div>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content popup-card">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Add Item</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="iid" class="form-label lable ">Item ID :</label>
-                        <input type="text" class="form-control control border-black rounded-4" id="iid" placeholder="I001"required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="iname" class="form-label lable">Item name :</label>
-                        <input type="text" class="form-control control border-black rounded-4" id="iname" placeholder="Rice"required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="iquantity" class="form-label lable">Quantity :</label>
-                        <input type="number" class="form-control control border-black rounded-4" id="iquantity" placeholder="100"required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="icostprice" class="form-label lable">Item Cost Price :</label>
-                        <input type="number" class="form-control control border-black rounded-4" id="icostprice" placeholder="200.00">
-                    </div>
-                    <div class="mb-3">
-                        <label for="isellingprice" class="form-label lable">Item Selling Price :</label>
-                        <input type="number" id="isellingprice" class="form-control control border-black rounded-4" placeholder="230.00">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="clear">Clear</button>
-                <button type="button" class="btn btn-secondary text-white" data-bs-dismiss="modal" id="item_close">Close</button>
-                <button type="button" class="btn btn-primary" id="item_add">Add Item</button>
-            </div>
-        </div>
-    </div>
+<div class="card card-size position-absolute border-0 details-card">
+    <img src="access/images/cart.png" class="img-fluid rounded-start position-absolute top-50 start-0 bottom-50 translate-middle item-img" alt="...">
+    <h5 class="card-title text-center fs-3 fw-bold position-absolute item-tittle">Order Details</h5>
 </div>
 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" style="width: 600px">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel1">Update Item</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel1">Update Order</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body position-relative">
                 <form>
                     <div class="mb-3">
-                        <label for="iid1" class="form-label lable ">Item ID :</label>
-                        <input type="text" class="form-control control border-black rounded-4" id="iid1" placeholder="I001"required>
+                        <label for="orderid" class="form-label">Order Code :</label>
+                        <input type="text" class="form-control control border-black rounded-4" id="orderid" placeholder="O001" style="width: 250px" required>
+                    </div>
+                    <div class="mb-3 position-absolute cust-code">
+                        <label for="customercode" class="form-label">Customer Code :</label>
+                        <input type="text" class="form-control control border-black rounded-4" id="customercode" placeholder="Rice" style="width: 250px" required>
                     </div>
                     <div class="mb-3">
-                        <label for="iname1" class="form-label lable">Item name :</label>
-                        <input type="text" class="form-control control border-black rounded-4" id="iname1" placeholder="Rice"required>
+                        <label for="customernumber" class="form-label lable">Customer Number :</label>
+                        <input type="text" class="form-control control border-black rounded-4" id="customernumber" placeholder="C001" style="width: 250px" required>
+                    </div>
+                    <div class="mb-3 position-absolute item-name">
+                        <label for="itemname" class="form-label">Item Name :</label>
+                        <input type="text" class="form-control control border-black rounded-4" id="itemname" placeholder="Rice" style="width: 250px" required>
                     </div>
                     <div class="mb-3">
-                        <label for="iquantity1" class="form-label lable">Quantity :</label>
-                        <input type="number" class="form-control control border-black rounded-4" id="iquantity1" placeholder="100"required>
+                        <label for="itemprice" class="form-label ">Item Price :</label>
+                        <input type="number" class="form-control control border-black rounded-4" id="itemprice" placeholder="100.00" style="width: 250px" required>
+                    </div>
+                    <div class="mb-3 position-absolute qty">
+                        <label for="qtycount" class="form-label ">Quantity :</label>
+                        <input type="number" class="form-control control border-black rounded-4" id="qtycount" placeholder="100" style="width: 250px" required>
                     </div>
                     <div class="mb-3">
-                        <label for="icostprice1" class="form-label lable">Item Cost Price :</label>
-                        <input type="number" class="form-control control border-black rounded-4" id="icostprice1" placeholder="200.00">
+                        <label for="totalnum" class="form-label lable">Total :</label>
+                        <input type="number" class="form-control control border-black rounded-4" id="totalnum" placeholder="200.00" style="width: 250px">
+                    </div>
+                    <div class="mb-3 position-absolute discount-number">
+                        <label for="discount" class="form-label ">Discount :</label>
+                        <input type="number" class="form-control control border-black rounded-4" id="discount" placeholder="10" style="width: 250px" required>
                     </div>
                     <div class="mb-3">
-                        <label for="isellingprice1" class="form-label lable">Item Selling Price :</label>
-                        <input type="number" id="isellingprice1" class="form-control control border-black rounded-4" placeholder="230.00">
+                        <label for="subtotalnumber" class="form-label lable">Sub Amount :</label>
+                        <input type="number" id="subtotalnumber" class="form-control control border-black rounded-4" placeholder="230.00" style="width: 250px">
+                    </div>
+                    <div class="mb-3 position-absolute Paid">
+                        <label for="Paid" class="form-label ">Paid :</label>
+                        <input type="number" class="form-control control border-black rounded-4" id="Paid" placeholder="500.00" style="width: 250px" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="balancecount" class="form-label lable">Balance :</label>
+                        <input type="number" id="balancecount" class="form-control control border-black rounded-4" placeholder="270.00" style="width: 250px">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Update Item</button>
+                <button type="button" class="btn btn-primary update-order">Update Order</button>
             </div>
         </div>
     </div>
 </div>
 <div class="card card-size shadow rounded-4 position-absolute start-50 bottom-50 end-50 translate-middle center-card">
     <div class="card card-size border-0 position-absolute button-card">
-        <button type="button" class="btn btn-primary position-relative text-white fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 200px">
+        <a class="nav-link text-white" href="Order.html">
+        <button type="button" class="btn btn-primary position-relative text-white fw-bold" style="width: 160px">
             <img src="access/images/add.png" class="img-fluid rounded-start position-absolute add-img" alt="...">
-            Add Item
+            Add Order
         </button>
+        </a>
     </div>
     <div class="card card-size border-0 position-absolute rounded-4 search-card">
         <div class="d-flex justify-content-evenly rounded-top-4 position-relative tittlebar" style="height: 40px">
@@ -142,19 +129,25 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">Item Code</th>
+                <th scope="col">Order Code</th>
+                <th scope="col">Customer Code</th>
+                <th scope="col">Mobile</th>
                 <th scope="col">Item Name</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Item Cost Price</th>
-                <th scope="col">Item Selling Price</th>
+                <th scope="col">Item Price</th>
+                <th scope="col">QTY</th>
+                <th scope="col">Total</th>
+                <th scope="col">Discount</th>
+                <th scope="col">Sub Amount</th>
+                <th scope="col">Paid</th>
+                <th scope="col">Balance</th>
             </tr>
             </thead>
-            <tbody  id="item-tbody">
+            <tbody  id="orderdetails-tbody">
             </tbody>
         </table>
     </div>
     <div class="card card-size position-absolute border-0 button-set">
-        <button type="button" class="btn btn-warning position-absolute text-white fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal1" style="width: 170px">
+        <button type="button" id="update" class="btn btn-warning position-absolute text-white fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal1" style="width: 170px">
             <img src="access/images/update.png" class="img-fluid rounded-start position-absolute add-img" alt="...">
             Update
         </button>
@@ -168,6 +161,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<script type="module" src="mini-Ims/Controller/ItemController.js"></script>
 </body>
 </html>

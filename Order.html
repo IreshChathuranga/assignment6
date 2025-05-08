@@ -174,18 +174,27 @@
     <div class="card card-size border-0 position-absolute rounded-4 pay-card">
         <form class="d-flex" role="search">
             <label for="total" class="form-label lable position-absolute total-lable fs-6 fw-bold">Total :</label>
-            <input type="number" id="total" class="form-control control position-absolute total-input" style="width: 250px">
+            <input type="number" id="total" class="form-control control position-absolute total-input" style="width: 150px">
 
             <button type="button" class="btn btn-warning text-white fw-bold position-absolute discount" id="discount">Discount</button>
-            <input type="number" id="bouns" class="form-control control position-absolute bonus-input" style="width: 250px">
+            <input type="number" id="bouns" class="form-control control position-absolute bonus-input" style="width: 150px">
 
             <label for="subamount" class="form-label lable position-absolute subamount-lable fs-6 fw-bold">Subtotal :</label>
-            <input type="number" id="subamount" class="form-control control position-absolute subamount-input" style="width: 250px">
+            <input type="number" id="subamount" class="form-control control position-absolute subamount-input" style="width: 150px">
+
+            <label for="cash" class="form-label lable position-absolute cash-lable fs-6 fw-bold">Cash :</label>
+            <input type="number" id="cash" class="form-control control position-absolute cash-input" style="width: 150px">
+
+            <label for="blance" class="form-label lable position-absolute blance-lable fs-6 fw-bold">Balance :</label>
+            <input type="number" id="blance" class="form-control control position-absolute blance-input" style="width: 150px">
+
+            <label for="orderid" class="form-label fs-6 fw-bold orderid-lable position-absolute">Order ID :</label>
+            <input type="text" class="form-control control position-absolute orderid-input" id="orderid" placeholder="O001" style="width: 150px" required>
 
             <button type="button" class="btn btn-danger position-absolute btn-delete" id="btn-delete" style="width: 140px">
                 Delete Order
             </button>
-            <button type="button" class="btn btn-success position-absolute btn-orderclear" id="btn-orderclear" style="width: 70px">
+            <button type="button" class="btn btn-success position-absolute btn-orderclear" id="btn-orderclear" style="width: 140px">
                 Clear
             </button>
             <button type="button" class="btn btn-secondary position-absolute btn-comformorder" id="comformorder" style="width: 140px">
