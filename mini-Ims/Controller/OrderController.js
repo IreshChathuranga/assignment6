@@ -160,3 +160,4 @@ $('#clear1').on('click', function () {
 $('#clear1').on('click', function () {
     $('#exampleModal input').val('');
 });
+
