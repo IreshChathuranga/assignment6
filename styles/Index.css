@@ -1,3 +1,6 @@
+html{
+    overflow: hidden;
+}
 .my-navbar{
     height: 65px;
     background-color: #E71864;
@@ -18,7 +21,7 @@
 .main-container{
     width: 550px;
     height: 570px;
-    top: 70px;
+    top: 7px;
     left: 50px;
 }
 .cust-card{
@@ -73,7 +76,7 @@
 .description-container{
     width: 550px;
     height: 570px;
-    top: 70px;
+    top: 7px;
     right: 200px;
 }
 .cust-desc{
@@ -106,7 +109,7 @@
 .setting-card{
     width: 250px;
     height: 30px;
-    bottom: -590px; right: 20px;
+    bottom: -510px; right: 20px;
 }
 .setting-tittle{
     width: 100px;
@@ -115,4 +118,23 @@
 .setting-img{
     width: 50px;
     height: 50px;
+}
+@media all and (max-width: 1055px){
+    /*.main-container{*/
+    /*    width: 400px;*/
+    /*    height: 480px;*/
+    /*    top: 7px;*/
+    /*    left: 50px;*/
+    /*}*/
+    .description-container{
+        /*width: 200px;*/
+        /*height: 480px;*/
+        /*top: 7px;*/
+        right: 0px;
+    }
+/*    .cust-desc{*/
+/*        width: 500px;*/
+/*        height: 170px;*/
+/*        border: 1px solid #E718A5;*/
+/*    }*/
 }

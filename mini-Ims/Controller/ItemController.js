@@ -1,22 +1,22 @@
 import {customers_db, item_db} from "../db/db.js";
 import ItemModel from "../model/ItemModel.js";
 
-function loadItem() {
-    $('#item-tbody').empty();
-
-    item_db.forEach(item => {
-        const row = `
-            <tr>
-                <td>${item.iid}</td>
-                <td>${item.iname}</td>
-                <td>${item.iquantity}</td>
-                <td>${item.icostprice}</td>
-                <td>${item.isellingprice}</td>
-            </tr>
-        `;
-        $('#item-tbody').append(row);
-    });
-}
+// function loadItem() {
+//     $('#item-tbody').empty();
+//
+//     item_db.forEach(item => {
+//         const row = `
+//             <tr>
+//                 <td>${item.iid}</td>
+//                 <td>${item.iname}</td>
+//                 <td>${item.iquantity}</td>
+//                 <td>${item.icostprice}</td>
+//                 <td>${item.isellingprice}</td>
+//             </tr>
+//         `;
+//         $('#item-tbody').append(row);
+//     });
+// }
 
 $('#item_add').on('click', function () {
     let iid = $('#iid').val().trim();
@@ -72,7 +72,7 @@ $("#item-tbody").on('click', 'tr', function () {
     selectedItemIndex = $(this).index();
 });
 
-$('.btn-warning[data-bs-target="#exampleModal1"]').on('click', function () {
+$('.btn-warning[data-bs-target="#exampleModalitem1"]').on('click', function () {
     if (selectedItemIndex === null) {
         Swal.fire({
             title: 'No item selected!',
@@ -120,11 +120,11 @@ $('.modal-footer .btn.btn-primary').on('click', function () {
         icon: "success"
     });
 
-    $('#exampleModal1').modal('hide');
+    $('#exampleModalitem1').modal('hide');
     selectedItemIndex = null;
 });
 
-$('.delete-btn').on('click', function () {
+$('.item-delete-btn').on('click', function () {
     if (selectedItemIndex === null) {
         Swal.fire({
             title: 'No item selected!',
@@ -183,7 +183,7 @@ $('form[role="search"]').on('submit', function (e) {
     });
 });
 
-$('#clear').on('click', function () {
+$('#clearitem').on('click', function () {
     $('#iid').val('');
     $('#iname').val('');
     $('#iquantity').val('');
@@ -191,6 +191,32 @@ $('#clear').on('click', function () {
     $('#isellingprice').val('');
 });
 
-$('#clear').on('click', function () {
-    $('#exampleModal input').val('');
+$('#clearitem').on('click', function () {
+    $('#exampleModalitem input').val('');
+});
+
+function loadItem() {
+    $('#item-tbody').empty();
+
+    const displayedOrderIds = new Set();
+
+    item_db.forEach(item => {
+        if (!displayedOrderIds.has(item.iid)) {
+            displayedOrderIds.add(item.iid);
+
+            const row = `
+                <tr>
+                    <td>${item.iid}</td>
+                <td>${item.iname}</td>
+                <td>${item.iquantity}</td>
+                <td>${item.icostprice}</td>
+                <td>${item.isellingprice}</td>
+                </tr>
+            `;
+            $('#item-tbody').append(row);
+        }
+    });
+}
+$(document).ready(function () {
+    loadItem();
 });

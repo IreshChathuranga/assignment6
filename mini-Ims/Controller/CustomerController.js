@@ -1,23 +1,48 @@
-import { customers_db } from "../db/db.js";
+import {customers_db, item_db} from "../db/db.js";
 import CustomerModel from "../model/CustomerModel.js";
+
+// function loadCustomer() {
+//     $('#customer-tbody').empty();
+//
+//     customers_db.forEach((item, index) => {
+//         const row = `
+//             <tr>
+//                 <td>${item.cid}</td>
+//                 <td>${item.cname}</td>
+//                 <td>${item.caddress}</td>
+//                 <td>${item.cemail}</td>
+//                 <td>${item.cnumber}</td>
+//             </tr>
+//         `;
+//         $('#customer-tbody').append(row);
+//     });
+// }
 
 function loadCustomer() {
     $('#customer-tbody').empty();
 
-    customers_db.forEach((item, index) => {
-        const row = `
-            <tr>
-                <td>${item.cid}</td>
-                <td>${item.cname}</td>
-                <td>${item.caddress}</td>
-                <td>${item.cemail}</td>
-                <td>${item.cnumber}</td>
-            </tr>
-        `;
-        $('#customer-tbody').append(row);
+    const displayedCustomerIds = new Set();
+
+    customers_db.forEach(item => {
+        if (!displayedCustomerIds.has(item.cid)) {
+            displayedCustomerIds.add(item.cid);
+
+            const row = `
+                <tr>
+                    <td>${item.cid}</td>
+                    <td>${item.cname}</td>
+                    <td>${item.caddress}</td>
+                    <td>${item.cemail}</td>
+                    <td>${item.cnumber}</td>
+                </tr>
+            `;
+            $('#customer-tbody').append(row);
+        }
     });
 }
-
+$(document).ready(function () {
+    loadCustomer();
+});
 $('#customer_add').on('click', function () {
     let cid = $('#cid').val().trim();
     let cname = $('#cname').val().trim();
@@ -127,7 +152,7 @@ $('.modal-footer .btn.btn-primary').on('click', function () {
 });
 
 
-$('.delete-btn').on('click', function () {
+$('.customer-delete-btn').on('click', function () {
     if (selectedCustomerIndex === null) {
         Swal.fire({
             title: 'No customer selected!',

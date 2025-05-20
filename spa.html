@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="access/lib/normalize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/Index.css">
+    <link rel="stylesheet" href="styles/Customer.css">
+    <link rel="stylesheet" href="styles/Item.css">
+    <link rel="stylesheet" href="styles/Order.css">
+    <link rel="stylesheet" href="styles/Orderdetails.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&family=Bebas+Neue&family=Monoton&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+<header>
+        <nav class="navbar navbar-expand-lg fw-bold text-white my-navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="access/images/icon.png" alt="Logo" class="my-icon me-2" style="height: 80px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center w-100">
+                        <ul class="navbar-nav mb-2 mb-lg-0 container">
+                            <li class="nav-item">
+                                <a class="nav-link active text-white" href="#" id="home_nav">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#" id="customer_nav">Customers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#" id="item_nav">Items</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    Orders
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" id="order_nav">Add Order</a></li>
+                                    <li><a class="dropdown-item" href="#" id="orderdetails_nav">Order Details</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="d-flex align-items-center gap-3 ps-3 pe-3 mt-3 mt-lg-0">
+                            <img src="access/images/addCustomer.png" class="container cust-icon" alt="...">
+                            <img src="access/images/logout.png" class="container logout-icon" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<!--    Home Content-->
+    <div class="card home-card border-0"  id="home_content" style="width: 100vw; height: 13vh">
+        <div class="row position-absolute border-end border-danger main-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="card mb-3 position-relative rounded-5 cust-card">
+                <div class="row g-0">
+                    <div class="col-md-4 position-relative rounded-5 img-card">
+                        <img src="access/images/customers.png" class="img-fluid rounded-start position-absolute top-50 start-50 translate-middle" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title text-center fs-3 fw-bold">Customers</h5>
+                            <p class="card-text position-absolute top-50 bottom-50 translate-middle-y count">Count :</p>
+                            <p class="card-text position-absolute fw-bold fs-5 text-center number">100</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 position-relative rounded-5 item-card">
+                <div class="row g-0">
+                    <div class="col-md-4 position-relative rounded-5 itemimg-card">
+                        <img src="access/images/item.png" class="img-fluid rounded-start position-absolute top-50 start-50 bottom-50 end-50 translate-middle" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title text-center fs-3 fw-bold">Items</h5>
+                            <p class="card-text position-absolute top-50 bottom-50 translate-middle-y count">Count :</p>
+                            <p class="card-text position-absolute fw-bold fs-5 text-center number">120</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 position-relative rounded-5 cart-card">
+                <div class="row g-0">
+                    <div class="col-md-4 position-relative rounded-5 cartimg-card">
+                        <img src="access/images/cart.png" class="img-fluid rounded-start position-absolute top-50 start-50 bottom-50 end-50 translate-middle" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title text-center fs-3 fw-bold">Orders</h5>
+                            <p class="card-text position-absolute top-50 bottom-50 translate-middle-y count">Count :</p>
+                            <p class="card-text position-absolute fw-bold fs-5 text-center number">30</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row position-absolute description-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="card mb-3 position-relative rounded-5 cust-desc">
+                <div class="row g-0">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title position-absolute desc-tittle">Today Customers</h5>
+                            <p class="card-text position-absolute text-center fw-bold fs-5 text-primary desc-num">10</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 position-absolute top-50 end-0 bottom-50  translate-middle desc-img">
+                        <img src="access/images/customerImage.png " class="img-fluid rounded-start position-absolute top-50 end-0 bottom-50  translate-middle" alt="...">
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 position-relative rounded-5 item-desc">
+                <div class="row g-0">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title position-absolute desc-tittle">New Products</h5>
+                            <p class="card-text position-absolute text-center fw-bold fs-5 text-primary desc-num">6</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 position-absolute top-50 end-0 bottom-50  translate-middle desc-img">
+                        <img src="access/images/itemImage.png" class="img-fluid rounded-start position-absolute top-50 end-0 bottom-50  translate-middle" alt="...">
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 position-relative rounded-5 cart-desc">
+                <div class="row g-0">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title position-absolute desc-tittle">Today Orders</h5>
+                            <p class="card-text position-absolute text-center fw-bold fs-5 text-primary desc-num">0</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 cart-image position-absolute top-50 end-0 bottom-50  translate-middle desc-img">
+                        <img src="access/images/cartImage.png" class="img-fluid rounded-start position-absolute top-50 end-0 bottom-50  translate-middle" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 position-absolute setting-card d-flex justify-content-end">
+            <div class="card mb-3 border border-0 position-relative">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title position-absolute top-50 bottom-50 end-0 start-50 translate-middle fs-3 fw-bold setting-tittle">Setting</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 position-absolute top-50 end-0 bottom-50  translate-middle setting-img">
+                    <img src="access/images/setting.png" class="img-fluid rounded-start" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    Customer Content-->
+    <div class="card home-card border-0"  id="customer_content" style="width: 100vw; height: 13vh">
+        <div class="card card-size position-absolute border-0 c-card">
+            <img src="access/images/customers.png" class="img-fluid rounded-start position-absolute cust-img" alt="...">
+            <h5 class="card-title text-center fs-3 fw-bold position-absolute cust-tittle">Customers</h5>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content popup-card">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Add Customer</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="cid" class="form-label lable ">Customer ID :</label>
+                                <input type="text" class="form-control control border-black rounded-4" id="cid" placeholder="C001"required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cname" class="form-label lable">Customer name :</label>
+                                <input type="text" class="form-control control border-black rounded-4" id="cname" placeholder="Iresh Chathuranga"required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="caddress" class="form-label lable">Customer Address :</label>
+                                <input type="text" class="form-control control border-black rounded-4" id="caddress" placeholder="Ambalangoda"required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cemail" class="form-label lable">Email address :</label>
+                                <input type="email" class="form-control control border-black rounded-4" id="cemail" placeholder="name@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cnumber" class="form-label lable">Phone Number :</label>
+                                <input type="tel" id="cnumber" class="form-control control border-black rounded-4" placeholder="0771234567">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" id="clear">Clear</button>
+                        <button type="button" class="btn btn-secondary text-white" data-bs-dismiss="modal" id="customer_close">Close</button>
+                        <button type="button" class="btn btn-primary" id="customer_add">Add Customer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel1">New message</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="cid1" class="form-label lable ">Customer ID :</label>
+                                <input type="text" class="form-control control border-black rounded-4" id="cid1" placeholder="C001"required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cname1" class="form-label lable">Customer name :</label>
+                                <input type="text" class="form-control control border-black rounded-4" id="cname1" placeholder="Iresh Chathuranga"required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="caddress1" class="form-label lable">Customer Address :</label>
+                                <input type="text" class="form-control control border-black rounded-4" id="caddress1" placeholder="Ambalangoda"required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cemail1" class="form-label lable">Email address :</label>
+                                <input type="email" class="form-control control border-black rounded-4" id="cemail1" placeholder="name@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cnumber1" class="form-label lable">Phone Number :</label>
+                                <input type="tel" id="cnumber1" class="form-control control border-black rounded-4" placeholder="0771234567">                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Update Customer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card card-size shadow rounded-4 position-absolute start-50 bottom-50 end-50 translate-middle center-card">
+            <div class="card card-size border-0 position-absolute button-card">
+                <button type="button" class="btn btn-primary position-relative text-white fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 200px">
+                    <img src="access/images/add.png" class="img-fluid rounded-start position-absolute add-img" alt="...">
+                    Add Customer
+                </button>
+            </div>
+            <div class="card card-size border-0 position-absolute rounded-4 search-card">
+                <div class="d-flex justify-content-evenly rounded-top-4 position-relative custtittlebar" style="height: 40px">
+                    <h5 class="fs-6 fw-bold position-absolute top-50 bottom-0 end-50 translate-middle">Customer Search</h5>
+                </div>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 position-absolute start-50 end-50 translate-middle-x" type="search" placeholder="Search" aria-label="Search" style="width: 400px">
+                    <button class="btn btn-outline-success position-absolute search-button" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="d-flex justify-content-evenly position-absolute start-50 end-50 translate-middle-x cust-table-card">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone Number</th>
+                    </tr>
+                    </thead>
+                    <tbody  id="customer-tbody">
+                    </tbody>
+                </table>
+            </div>
+            <div class="card card-size position-absolute border-0 button-set">
+                <button type="button" class="btn btn-warning position-absolute text-white fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal1" style="width: 170px">
+                    <img src="access/images/update.png" class="img-fluid rounded-start position-absolute add-img" alt="...">
+                    Update
+                </button>
+                <button type="button" class="btn btn-danger position-absolute text-white fw-bold customer-delete-btn">
+                    <img src="access/images/delete.png" class="img-fluid rounded-start position-absolute add-img" alt="...">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+<!--    Item Content-->
+    <div class="card home-card border-0"  id="item_content" style="width: 100vw; height: 13vh">
+        <div class="card card-size position-absolute border-0 i-card">
+            <img src="access/images/item.png" class="img-fluid rounded-start position-absolute top-50 start-0 bottom-50 translate-middle item-img" alt="...">
+            <h5 class="card-title text-center fs-3 fw-bold position-absolute item-tittle">Items</h5>
+        </div>
+        <div class="modal fade" id="exampleModalitem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content popup-card">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabelitem">Add Item</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="iid" class="form-label lable ">Item ID :</label>
+                                <input type="text" class="form-control control border-black rounded-4" id="iid" placeholder="I001"required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="iname" class="form-label lable">Item name :</label>
+                                <input type="text" class="form-control control border-black rounded-4" id="iname" placeholder="Rice"required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="iquantity" class="form-label lable">Quantity :</label>
+                                <input type="number" class="form-control control border-black rounded-4" id="iquantity" placeholder="100"required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="icostprice" class="form-label lable">Item Cost Price :</label>
+                                <input type="number" class="form-control control border-black rounded-4" id="icostprice" placeholder="200.00">
+                            </div>
+                            <div class="mb-3">
+                                <label for="isellingprice" class="form-label lable">Item Selling Price :</label>
+                                <input type="number" id="isellingprice" class="form-control control border-black rounded-4" placeholder="230.00">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" id="clearitem">Clear</button>
+                        <button type="button" class="btn btn-secondary text-white" data-bs-dismiss="modal" id="item_close">Close</button>
+                        <button type="button" class="btn btn-primary" id="item_add">Add Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalitem1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabelitem1">New message</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="iid1" class="form-label lable ">Item ID :</label>
+                                <input type="text" class="form-control control border-black rounded-4" id="iid1" placeholder="I001"required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="iname1" class="form-label lable">Item name :</label>
+                                <input type="text" class="form-control control border-black rounded-4" id="iname1" placeholder="Rice"required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="iquantity1" class="form-label lable">Quantity :</label>
+                                <input type="number" class="form-control control border-black rounded-4" id="iquantity1" placeholder="100"required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="icostprice1" class="form-label lable">Item Cost Price :</label>
+                                <input type="number" class="form-control control border-black rounded-4" id="icostprice1" placeholder="200.00">
+                            </div>
+                            <div class="mb-3">
+                                <label for="isellingprice1" class="form-label lable">Item Selling Price :</label>
+                                <input type="number" id="isellingprice1" class="form-control control border-black rounded-4" placeholder="230.00">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Update Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card card-size shadow rounded-4 position-absolute start-50 bottom-50 end-50 translate-middle center-card">
+            <div class="card card-size border-0 position-absolute button-card">
+                <button type="button" class="btn btn-primary position-relative text-white fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModalitem" style="width: 200px">
+                    <img src="access/images/add.png" class="img-fluid rounded-start position-absolute add-img" alt="...">
+                    Add Item
+                </button>
+            </div>
+            <div class="card card-size border-0 position-absolute rounded-4 itemsearch-card">
+                <div class="d-flex justify-content-evenly rounded-top-4 position-relative itemtittlebar" style="height: 40px">
+                    <h5 class="fs-6 fw-bold position-absolute top-50 bottom-0 translate-middle item-search-lable">Item Search</h5>
+                </div>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 position-absolute start-50 end-50 translate-middle-x" type="search" placeholder="Search" aria-label="Search" style="width: 400px">
+                    <button class="btn btn-outline-success position-absolute search-button" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="d-flex justify-content-evenly position-absolute start-50 end-50 translate-middle-x item-table-card">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Item Code</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Item Cost Price</th>
+                        <th scope="col">Item Selling Price</th>
+                    </tr>
+                    </thead>
+                    <tbody  id="item-tbody">
+                    </tbody>
+                </table>
+            </div>
+            <div class="card card-size position-absolute border-0 button-set">
+                <button type="button" class="btn btn-warning position-absolute text-white fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModalitem1" style="width: 170px">
+                    <img src="access/images/update.png" class="img-fluid rounded-start position-absolute add-img" alt="...">
+                    Update
+                </button>
+                <button type="button" class="btn btn-danger position-absolute text-white fw-bold item-delete-btn">
+                    <img src="access/images/delete.png" class="img-fluid rounded-start position-absolute add-img" alt="...">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+<!--    Order Content-->
+    <div class="card home-card border-0"  id="order_content" style="width: 100vw; height: 13vh">
+        <div class="card card-size position-absolute border-0 order-card">
+            <img src="access/images/cart.png" class="img-fluid rounded-start position-absolute top-50 start-0 bottom-50 translate-middle order-img" alt="...">
+            <h5 class="card-title text-center fs-3 fw-bold position-absolute order-tittle">Add Order</h5>
+        </div>
+        <div class="card card-size shadow rounded-4 position-absolute start-50 bottom-50 end-50 translate-middle centerorder-card">
+            <!--    <div class="card card-size border-0 position-absolute button-card">-->
+            <!--        <button type="button" class="btn btn-primary position-relative text-white fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 200px">-->
+            <!--            <img src="access/images/add.png" class="img-fluid rounded-start position-absolute add-img" alt="...">-->
+            <!--            Add Item-->
+            <!--        </button>-->
+            <!--    </div>-->
+            <div class="card card-size border-0 position-absolute rounded-4 search-cust-card">
+                <div class="d-flex justify-content-evenly rounded-top-4 position-relative cust-tittlebar" style="height: 40px">
+                    <h5 class="fs-6 fw-bold position-absolute top-50 bottom-0 end-50 translate-middle">Customer Search</h5>
+                </div>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 position-absolute search-input" id="customerId" type="search" placeholder="C001" aria-label="Search" style="width: 320px">
+                    <button class="btn btn-outline-success position-absolute sch-button" type="submit" id="btnSearchCustomer">Search</button>
+
+                    <label for="custname" class="form-label position-absolute itemname-lable">Customer name :</label>
+                    <input type="text" class="form-control control position-absolute itemname-input" id="custname" style="width: 460px" required>
+
+                    <label for="custaddress" class="form-label position-absolute address-lable">Customer Address :</label>
+                    <input type="text" class="form-control control position-absolute address-input" id="custaddress" style="width: 460px" required>
+
+                    <label for="custemail" class="form-label position-absolute email-lable">Email address :</label>
+                    <input type="email" class="form-control control position-absolute email-input" id="custemail" style="width: 220px">
+
+                    <label for="custnumber" class="form-label position-absolute number-lable">Phone Number :</label>
+                    <input type="number" class="form-control control position-absolute number-input" id="custnumber" style="width: 220px">
+
+                    <button type="button" class="btn btn-primary position-absolute text-white fw-bold add-item-btn" data-bs-toggle="modal" data-bs-target="#customerModal" style="width: 200px">
+                        <img src="access/images/add.png" class="img-fluid rounded-start position-absolute add-img" alt="...">
+                        Add Customer
+                    </button>
+
+                    <button type="button" class="btn btn-warning text-white fw-bold position-absolute clear-btn" id="btn-clear">Clear</button>
+                </form>
+            </div>
+            <div class="card card-size border-0 position-absolute rounded-4 searchitem-card">
+                <div class="d-flex justify-content-evenly rounded-top-4 position-relative itesearch-tittlebar" style="height: 40px">
+                    <h5 class="fs-6 fw-bold position-absolute top-50 bottom-0 translate-middle">Item Search</h5>
+                </div>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 position-absolute search-input" id="itemId" type="search" placeholder="I001" aria-label="Search" style="width: 320px">
+                    <button class="btn btn-outline-success position-absolute sch-button" type="submit" id="btnSearchItem">Search</button>
+
+                    <label for="itemname" class="form-label lable position-absolute itemname-lable">Item name :</label>
+                    <input type="text" class="form-control control position-absolute itemname-input" id="itemname" style="width: 455px" required>
+
+                    <label for="itemsellprice" class="form-label lable position-absolute itemprice-lable">Price :</label>
+                    <input type="number" id="itemsellprice" class="form-control control position-absolute itemprice-input" style="width: 200px">
+
+                    <label for="qty" class="form-label lable position-absolute qty-lable">QTY :</label>
+                    <input type="number" id="qty" class="form-control control position-absolute qty-input" style="width: 200px">
+
+                    <label for="orderqty" class="form-label lable position-absolute orderqty-lable">Order QTY :</label>
+                    <input type="number" id="orderqty" class="form-control control position-absolute orderqty-input" style="width: 200px">
+
+                    <label for="subtotal" class="form-label lable position-absolute subtotal-lable">Total :</label>
+                    <input type="number" id="subtotal" class="form-control control position-absolute subtotal-input" style="width: 200px">
+
+                    <a class="nav-link text-white" href="#item_nav">
+                        <button type="button" class="btn btn-primary position-absolute text-white fw-bold add-item-btn" style="width: 150px">
+                            <img src="access/images/add.png" class="img-fluid rounded-start position-absolute add-img" alt="...">
+                            Add Item
+                        </button>
+                    </a>
+
+                    <button type="button" class="btn btn-success position-absolute btn-addtocard" id="add_to_card" style="width: 150px">
+                        <img src="access/images/add.png" class="img-fluid rounded-start position-absolute add-img" alt="...">
+                        Add To Card
+                    </button>
+
+                    <button type="button" class="btn btn-warning text-white fw-bold position-absolute clear1" id="clear1">Clear</button>
+                </form>
+            </div>
+            <div class="d-flex justify-content-evenly position-absolute start-50 end-50 translate-middle-x order-table-card">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Item Code</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Item Price</th>
+                        <th scope="col">QTY</th>
+                        <th scope="col">Order QTY</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                    </thead>
+                    <tbody  id="order-tbody">
+                    </tbody>
+                </table>
+            </div>
+            <div class="card card-size border-0 position-absolute rounded-4 pay-card">
+                <form class="d-flex" role="search">
+                    <label for="total" class="form-label lable position-absolute total-lable fs-6 fw-bold">Total :</label>
+                    <input type="number" id="total" class="form-control control position-absolute total-input" style="width: 150px">
+
+                    <button type="button" class="btn btn-warning text-white fw-bold position-absolute discount" id="discount">Discount</button>
+                    <input type="number" id="bouns" class="form-control control position-absolute bonus-input" style="width: 150px">
+
+                    <label for="subamount" class="form-label lable position-absolute subamount-lable fs-6 fw-bold">Subtotal :</label>
+                    <input type="number" id="subamount" class="form-control control position-absolute subamount-input" style="width: 150px">
+
+                    <label for="cash" class="form-label lable position-absolute cash-lable fs-6 fw-bold">Cash :</label>
+                    <input type="number" id="cash" class="form-control control position-absolute cash-input" style="width: 150px">
+
+                    <label for="blance" class="form-label lable position-absolute blance-lable fs-6 fw-bold">Balance :</label>
+                    <input type="number" id="blance" class="form-control control position-absolute blance-input" style="width: 150px">
+
+                    <label for="orderid" class="form-label fs-6 fw-bold orderid-lable position-absolute">Order ID :</label>
+                    <input type="text" class="form-control control position-absolute orderid-input" id="orderid" placeholder="O001" style="width: 150px" required>
+
+                    <button type="button" class="btn btn-danger position-absolute btn-delete" id="btn-delete" style="width: 140px">
+                        Delete Order
+                    </button>
+                    <button type="button" class="btn btn-success position-absolute btn-orderclear" id="btn-orderclear" style="width: 140px">
+                        Clear
+                    </button>
+                    <button type="button" class="btn btn-secondary position-absolute btn-comformorder" id="comformorder" style="width: 140px">
+                        Comform Order
+                    </button>
+
+                </form>
+            </div>
+            <!--    <div class="card card-size position-absolute border-0 button-set">-->
+            <!--        <button type="button" class="btn btn-warning position-absolute text-white fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal1" style="width: 170px">-->
+            <!--            <img src="access/images/update.png" class="img-fluid rounded-start position-absolute add-img" alt="...">-->
+            <!--            Update-->
+            <!--        </button>-->
+            <!--        <button type="button" class="btn btn-danger position-absolute text-white fw-bold delete-btn">-->
+            <!--            <img src="access/images/delete.png" class="img-fluid rounded-start position-absolute add-img" alt="...">-->
+            <!--            Delete-->
+            <!--        </button>-->
+            <!--    </div>-->
+        </div>
+    </div>
+
+<!--    Order Details Content-->
+    <div class="card home-card border-0"  id="orderdetails-content" style="width: 100vw; height: 13vh">
+        <div class="card card-size position-absolute border-0 details-card">
+            <img src="access/images/cart.png" class="img-fluid rounded-start position-absolute top-50 start-0 bottom-50 translate-middle item-img" alt="...">
+            <h5 class="card-title text-center fs-3 fw-bold position-absolute item-tittle">Order Details</h5>
+        </div>
+        <div class="modal fade" id="exampleModalOrderDetails" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="width: 600px">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabelOrderDetails">Update Order</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body position-relative">
+                        <form>
+                            <div class="mb-3">
+                                <label for="orderid" class="form-label">Order Code :</label>
+                                <input type="text" class="form-control control border-black rounded-4" id="oid" placeholder="O001" style="width: 250px" required>
+                            </div>
+                            <div class="mb-3 position-absolute cust-code">
+                                <label for="customercode" class="form-label">Customer Code :</label>
+                                <input type="text" class="form-control control border-black rounded-4" id="customercode" placeholder="Rice" style="width: 250px" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="customernumber" class="form-label lable">Customer Number :</label>
+                                <input type="text" class="form-control control border-black rounded-4" id="customernumber" placeholder="C001" style="width: 250px" required>
+                            </div>
+                            <div class="mb-3 position-absolute item-name">
+                                <label for="itemname" class="form-label">Item Name :</label>
+                                <input type="text" class="form-control control border-black rounded-4" id="item" placeholder="Rice" style="width: 250px" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="itemprice" class="form-label ">Item Price :</label>
+                                <input type="number" class="form-control control border-black rounded-4" id="itemprice" placeholder="100.00" style="width: 250px" required>
+                            </div>
+                            <div class="mb-3 position-absolute qty">
+                                <label for="qtycount" class="form-label ">Quantity :</label>
+                                <input type="number" class="form-control control border-black rounded-4" id="qtycount" placeholder="100" style="width: 250px" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="totalnum" class="form-label lable">Total :</label>
+                                <input type="number" class="form-control control border-black rounded-4" id="totalnum" placeholder="200.00" style="width: 250px">
+                            </div>
+                            <div class="mb-3 position-absolute discount-number">
+                                <label for="discount" class="form-label ">Discount :</label>
+                                <input type="number" class="form-control control border-black rounded-4" id="orderdiscount" placeholder="10" style="width: 250px" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subtotalnumber" class="form-label lable">Sub Amount :</label>
+                                <input type="number" id="subtotalnumber" class="form-control control border-black rounded-4" placeholder="230.00" style="width: 250px">
+                            </div>
+                            <div class="mb-3 position-absolute Paid">
+                                <label for="Paid" class="form-label ">Paid :</label>
+                                <input type="number" class="form-control control border-black rounded-4" id="Paid" placeholder="500.00" style="width: 250px" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="balancecount" class="form-label lable">Balance :</label>
+                                <input type="number" id="balancecount" class="form-control control border-black rounded-4" placeholder="270.00" style="width: 250px">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary update-order">Update Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card card-size shadow rounded-4 position-absolute start-50 bottom-50 end-50 translate-middle orderdetails-center-card">
+            <div class="card card-size border-0 position-absolute button-card">
+                <a class="nav-link text-white" href="Order.html">
+                    <button type="button" class="btn btn-primary position-relative text-white fw-bold" style="width: 160px">
+                        <img src="access/images/add.png" class="img-fluid rounded-start position-absolute add-img" alt="...">
+                        Add Order
+                    </button>
+                </a>
+            </div>
+            <div class="card card-size border-0 position-absolute rounded-4 search-card">
+                <div class="d-flex justify-content-evenly rounded-top-4 position-relative tittlebar" style="height: 40px">
+                    <h5 class="fs-6 fw-bold position-absolute top-50 bottom-0 translate-middle">Item Search</h5>
+                </div>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 position-absolute start-50 end-50 translate-middle-x" type="search" placeholder="Search" aria-label="Search" style="width: 400px">
+                    <button class="btn btn-outline-success position-absolute search-button" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="d-flex justify-content-evenly position-absolute start-50 end-50 translate-middle-x table-card">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Order Code</th>
+                        <th scope="col">Customer Code</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Item Price</th>
+                        <th scope="col">QTY</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Sub Amount</th>
+                        <th scope="col">Paid</th>
+                        <th scope="col">Balance</th>
+                    </tr>
+                    </thead>
+                    <tbody  id="orderdetails-tbody">
+                    </tbody>
+                </table>
+            </div>
+            <div class="card card-size position-absolute border-0 button-set">
+                <button type="button" id="update" class="btn btn-warning position-absolute text-white fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModalOrderDetails" style="width: 170px">
+                    <img src="access/images/update.png" class="img-fluid rounded-start position-absolute add-img" alt="...">
+                    Update
+                </button>
+                <button type="button" class="btn btn-danger position-absolute text-white fw-bold delete-btn">
+                    <img src="access/images/delete.png" class="img-fluid rounded-start position-absolute add-img" alt="...">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="access/lib/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script type="module" src="mini-Ims/Controller/CustomerController.js"></script>
+    <script type="module" src="mini-Ims/Controller/ItemController.js"></script>
+    <script type="module" src="mini-Ims/Controller/OrderController.js"></script>
+
+
+
+    <script>
+    $("#customer_content").css("display", "none");
+    $("#item_content").css("display", "none");
+    $("#order_content").css("display", "none");
+    $("#orderdetails-content").css("display", "none");
+
+    $("#customer_nav").on('click', function () {
+        $("#customer_content").css("display", "block");
+        $("#home_content").css("display", "none");
+        $("#item_content").css("display", "none");
+        $("#order_content").css("display", "none");
+        $("#orderdetails-content").css("display", "none");
+    })
+
+    $("#home_nav").on('click', function () {
+        $("#customer_content").css("display", "none");
+        $("#item_content").css("display", "none");
+        $("#order_content").css("display", "none");
+        $("#orderdetails-content").css("display", "none");
+        $("#home_content").css("display", "block");
+    })
+
+    $("#item_nav").on('click', function () {
+        $("#customer_content").css("display", "none");
+        $("#home_content").css("display", "none");
+        $("#order_content").css("display", "none");
+        $("#orderdetails-content").css("display", "none");
+        $("#item_content").css("display", "block");
+    })
+
+    $("#order_nav").on('click', function () {
+        $("#customer_content").css("display", "none");
+        $("#home_content").css("display", "none");
+        $("#item_content").css("display", "none");
+        $("#orderdetails-content").css("display", "none");
+        $("#order_content").css("display", "block");
+    })
+
+    $("#orderdetails_nav").on('click', function () {
+        $("#customer_content").css("display", "none");
+        $("#home_content").css("display", "none");
+        $("#item_content").css("display", "none");
+        $("#order_content").css("display", "none");
+        $("#orderdetails-content").css("display", "block");
+    })
+
+</script>
+</body>
+</html>

@@ -1,7 +1,3 @@
-body{
-    width: 100vw;
-    height: 100vh;
-}
 .navigation{
     background-color: #E71864;
 }
@@ -13,11 +9,10 @@ body{
     width: 70px;
     height: 50px;
 }
-.i-card{
+.details-card{
     width: 300px;
     height: 60px;
     left: 90px;
-    top: 10px;
 }
 .item-img{
     max-width: 50px;
@@ -37,7 +32,7 @@ body{
     top: 28px;
     left: 30px;
 }
-.center-card{
+.orderdetails-center-card{
     width: 1260px;
     height: 530px;
     background-color: rgba(217,217,217,0.66);
@@ -48,18 +43,18 @@ body{
     height: 22px;
     left: 6px;
 }
-.itemsearch-card{
+.search-card{
     width: 450px;
     height: 150px;
     gap: 10px;
     top: 28px;
     right: 30px;
-    background-color: rgba(162, 15, 181, 0.44);
+    background-color: rgba(199, 15, 70, 0.4);
 }
-.itemtittlebar{
-    background-color: #A20FB5;
+.tittlebar{
+    background-color: #c70f46;
 }
-.itemtittlebar h5{
+.tittlebar h5{
     left: 70px;
 }
 .search-button{
@@ -69,7 +64,7 @@ body{
     left: 25px;
     margin: auto;
 }
-.item-table-card{
+.table-card{
     width: 1200px;
     height: 150px;
     top: 230px;
@@ -80,11 +75,31 @@ body{
     bottom: 80px;
     background-color: transparent;
 }
-.item-delete-btn{
+.delete-btn{
     width: 170px;
     right: 0;
 }
 .popup-card{
     width: 500px;
     height: 600px;
+}
+.cust-code{
+    top: 15px;
+    right: 20px;
+}
+.item-name{
+    top: 102px;
+    right: 20px;
+}
+.qty{
+    top: 187px;
+    right: 20px;
+}
+.discount-number{
+    top: 272px;
+    right: 20px;
+}
+.Paid{
+    top: 357px;
+    right: 20px;
 }
