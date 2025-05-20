@@ -1,22 +1,39 @@
-import {customers_db, item_db} from "../db/db.js";
+import { customers_db, item_db } from "../db/db.js";
 import ItemModel from "../model/ItemModel.js";
 
-// function loadItem() {
-//     $('#item-tbody').empty();
-//
-//     item_db.forEach(item => {
-//         const row = `
-//             <tr>
-//                 <td>${item.iid}</td>
-//                 <td>${item.iname}</td>
-//                 <td>${item.iquantity}</td>
-//                 <td>${item.icostprice}</td>
-//                 <td>${item.isellingprice}</td>
-//             </tr>
-//         `;
-//         $('#item-tbody').append(row);
-//     });
-// }
+function loadItem() {
+    $('#item-tbody').empty();
+
+    const displayedItemIds = new Set();
+
+    item_db.forEach(item => {
+        if (!displayedItemIds.has(item.iid)) {
+            displayedItemIds.add(item.iid);
+
+            const row = `
+                <tr>
+                    <td>${item.iid}</td>
+                    <td>${item.iname}</td>
+                    <td>${item.iquantity}</td>
+                    <td>${item.icostprice}</td>
+                    <td>${item.isellingprice}</td>
+                </tr>
+            `;
+            $('#item-tbody').append(row);
+        }
+    });
+}
+
+function updateItemCount() {
+    $('.item-number').text(item_db.length);
+}
+
+let selectedItemIndex = null;
+
+$(document).ready(function () {
+    loadItem();
+    updateItemCount();
+});
 
 $('#item_add').on('click', function () {
     let iid = $('#iid').val().trim();
@@ -41,11 +58,9 @@ $('#item_add').on('click', function () {
     localStorage.setItem("item_db", JSON.stringify(item_db));
 
     loadItem();
+    updateItemCount();
 
-    Swal.fire({
-        title: "Added Successfully!",
-        icon: "success"
-    });
+    Swal.fire({ title: "Added Successfully!", icon: "success" });
 
     $('#iid').val('');
     $('#iname').val('');
@@ -56,34 +71,27 @@ $('#item_add').on('click', function () {
 });
 
 $("#item-tbody").on('click', 'tr', function () {
-    let index = $(this).index();
-    let item = item_db[index];
+    selectedItemIndex = $(this).index();
 
-    $('#cid').val(item.iid);
+    const item = item_db[selectedItemIndex];
+    $('#iid').val(item.iid);
     $('#iname').val(item.iname);
     $('#iquantity').val(item.iquantity);
     $('#icostprice').val(item.icostprice);
     $('#isellingprice').val(item.isellingprice);
 });
 
-let selectedItemIndex = null;
-
-$("#item-tbody").on('click', 'tr', function () {
-    selectedItemIndex = $(this).index();
-});
-
 $('.btn-warning[data-bs-target="#exampleModalitem1"]').on('click', function () {
     if (selectedItemIndex === null) {
         Swal.fire({
             title: 'No item selected!',
-            text: 'Please click on a item row before updating.',
+            text: 'Please click on an item row before updating.',
             icon: 'warning'
         });
         return;
     }
 
     const item = item_db[selectedItemIndex];
-
     $('#iid1').val(item.iid);
     $('#iname1').val(item.iname);
     $('#iquantity1').val(item.iquantity);
@@ -110,16 +118,14 @@ $('.modal-footer .btn.btn-primary').on('click', function () {
         return;
     }
 
-    let updatedItem = new ItemModel(iid, iname, iquantity, icostprice, isellingprice);
+    const updatedItem = new ItemModel(iid, iname, iquantity, icostprice, isellingprice);
     item_db[selectedItemIndex] = updatedItem;
+    localStorage.setItem("item_db", JSON.stringify(item_db));
 
     loadItem();
+    updateItemCount();
 
-    Swal.fire({
-        title: "Updated Successfully!",
-        icon: "success"
-    });
-
+    Swal.fire({ title: "Updated Successfully!", icon: "success" });
     $('#exampleModalitem1').modal('hide');
     selectedItemIndex = null;
 });
@@ -128,7 +134,7 @@ $('.item-delete-btn').on('click', function () {
     if (selectedItemIndex === null) {
         Swal.fire({
             title: 'No item selected!',
-            text: 'Please select a item to delete.',
+            text: 'Please select an item to delete.',
             icon: 'warning'
         });
         return;
@@ -143,14 +149,12 @@ $('.item-delete-btn').on('click', function () {
     }).then((result) => {
         if (result.isConfirmed) {
             item_db.splice(selectedItemIndex, 1);
+            localStorage.setItem("item_db", JSON.stringify(item_db));
             loadItem();
-            selectedItemIndex = null;
+            updateItemCount();
 
-            Swal.fire(
-                'Deleted!',
-                'Item has been deleted.',
-                'success'
-            );
+            Swal.fire('Deleted!', 'Item has been deleted.', 'success');
+            selectedItemIndex = null;
         }
     });
 });
@@ -158,7 +162,6 @@ $('.item-delete-btn').on('click', function () {
 $('form[role="search"]').on('submit', function (e) {
     e.preventDefault();
     const query = $(this).find('input[type="search"]').val().toLowerCase();
-
     $('#item-tbody').empty();
 
     item_db.forEach(item => {
@@ -193,30 +196,4 @@ $('#clearitem').on('click', function () {
 
 $('#clearitem').on('click', function () {
     $('#exampleModalitem input').val('');
-});
-
-function loadItem() {
-    $('#item-tbody').empty();
-
-    const displayedOrderIds = new Set();
-
-    item_db.forEach(item => {
-        if (!displayedOrderIds.has(item.iid)) {
-            displayedOrderIds.add(item.iid);
-
-            const row = `
-                <tr>
-                    <td>${item.iid}</td>
-                <td>${item.iname}</td>
-                <td>${item.iquantity}</td>
-                <td>${item.icostprice}</td>
-                <td>${item.isellingprice}</td>
-                </tr>
-            `;
-            $('#item-tbody').append(row);
-        }
-    });
-}
-$(document).ready(function () {
-    loadItem();
 });

@@ -1,26 +1,8 @@
-import {customers_db, item_db} from "../db/db.js";
+import { customers_db } from "../db/db.js";
 import CustomerModel from "../model/CustomerModel.js";
-
-// function loadCustomer() {
-//     $('#customer-tbody').empty();
-//
-//     customers_db.forEach((item, index) => {
-//         const row = `
-//             <tr>
-//                 <td>${item.cid}</td>
-//                 <td>${item.cname}</td>
-//                 <td>${item.caddress}</td>
-//                 <td>${item.cemail}</td>
-//                 <td>${item.cnumber}</td>
-//             </tr>
-//         `;
-//         $('#customer-tbody').append(row);
-//     });
-// }
 
 function loadCustomer() {
     $('#customer-tbody').empty();
-
     const displayedCustomerIds = new Set();
 
     customers_db.forEach(item => {
@@ -40,9 +22,25 @@ function loadCustomer() {
         }
     });
 }
+
+function updateCustomerCount() {
+    $('.cust-number').text(customers_db.length);
+}
+
 $(document).ready(function () {
+    const storedCustomers = localStorage.getItem("customers_db");
+    if (storedCustomers) {
+        const parsedCustomers = JSON.parse(storedCustomers);
+        customers_db.length = 0;
+        parsedCustomers.forEach(c => customers_db.push(c));
+    }
+
     loadCustomer();
+    updateCustomerCount();
 });
+
+let selectedCustomerIndex = null;
+
 $('#customer_add').on('click', function () {
     let cid = $('#cid').val().trim();
     let cname = $('#cname').val().trim();
@@ -61,11 +59,12 @@ $('#customer_add').on('click', function () {
     }
 
     let customer_data = new CustomerModel(cid, cname, caddress, cemail, cnumber);
-    customers_db.push(customer_data);
 
+    customers_db.push(customer_data);
     localStorage.setItem("customers_db", JSON.stringify(customers_db));
 
     loadCustomer();
+    updateCustomerCount();
 
     Swal.fire({
         title: "Added Successfully!",
@@ -81,22 +80,14 @@ $('#customer_add').on('click', function () {
 });
 
 $("#customer-tbody").on('click', 'tr', function () {
-    let index = $(this).index();
-    let customer = customers_db[index];
+    selectedCustomerIndex = $(this).index();
+    const customer = customers_db[selectedCustomerIndex];
 
     $('#cid').val(customer.cid);
     $('#cname').val(customer.cname);
     $('#caddress').val(customer.caddress);
     $('#cemail').val(customer.cemail);
     $('#cnumber').val(customer.cnumber);
-});
-
-let selectedCustomerIndex = null;
-
-
-
-$("#customer-tbody").on('click', 'tr', function () {
-    selectedCustomerIndex = $(this).index();
 });
 
 $('.btn-warning[data-bs-target="#exampleModal1"]').on('click', function () {
@@ -140,7 +131,9 @@ $('.modal-footer .btn.btn-primary').on('click', function () {
     let updatedCustomer = new CustomerModel(cid, cname, caddress, cemail, cnumber);
     customers_db[selectedCustomerIndex] = updatedCustomer;
 
+    localStorage.setItem("customers_db", JSON.stringify(customers_db));
     loadCustomer();
+    updateCustomerCount();
 
     Swal.fire({
         title: "Updated Successfully!",
@@ -150,7 +143,6 @@ $('.modal-footer .btn.btn-primary').on('click', function () {
     $('#exampleModal1').modal('hide');
     selectedCustomerIndex = null;
 });
-
 
 $('.customer-delete-btn').on('click', function () {
     if (selectedCustomerIndex === null) {
@@ -171,7 +163,9 @@ $('.customer-delete-btn').on('click', function () {
     }).then((result) => {
         if (result.isConfirmed) {
             customers_db.splice(selectedCustomerIndex, 1);
+            localStorage.setItem("customers_db", JSON.stringify(customers_db));
             loadCustomer();
+            updateCustomerCount();
             selectedCustomerIndex = null;
 
             Swal.fire(
@@ -182,7 +176,6 @@ $('.customer-delete-btn').on('click', function () {
         }
     });
 });
-
 
 $('form[role="search"]').on('submit', function (e) {
     e.preventDefault();
@@ -218,8 +211,5 @@ $('#clear').on('click', function () {
     $('#caddress').val('');
     $('#cemail').val('');
     $('#cnumber').val('');
-});
-
-$('#clear').on('click', function () {
     $('#exampleModal input').val('');
 });

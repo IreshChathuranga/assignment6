@@ -1,3 +1,4 @@
+
 body{
     width: 100vw;
     height: 100vh;
@@ -84,4 +85,21 @@ body{
 .popup-card{
     width: 500px;
     height: 600px;
+}
+@media all and (max-width: 1055px){
+    .center-card {
+        width: 90% !important;
+    }
+    .cust-table-card{
+        width:90%;
+    }
+}
+@media all and (max-width: 950px){
+    .search-card{
+        width: 300px !important;
+        height: 120px !important;
+    }
+    .input{
+        width: 200px;
+    }
 }

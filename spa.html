@@ -62,7 +62,7 @@
 
 <!--    Home Content-->
     <div class="card home-card border-0"  id="home_content" style="width: 100vw; height: 13vh">
-        <div class="row position-absolute border-end border-danger main-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+        <div class="position-absolute main-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div class="card mb-3 position-relative rounded-5 cust-card">
                 <div class="row g-0">
                     <div class="col-md-4 position-relative rounded-5 img-card">
@@ -70,9 +70,9 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title text-center fs-3 fw-bold">Customers</h5>
+                            <h5 class="card-title text-center fs-3 fw-bold title">Customers</h5>
                             <p class="card-text position-absolute top-50 bottom-50 translate-middle-y count">Count :</p>
-                            <p class="card-text position-absolute fw-bold fs-5 text-center number">100</p>
+                            <p class="card-text position-absolute fw-bold fs-5 text-center number cust-number"></p>
                         </div>
                     </div>
                 </div>
@@ -84,9 +84,9 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title text-center fs-3 fw-bold">Items</h5>
+                            <h5 class="card-title text-center fs-3 fw-bold title">Items</h5>
                             <p class="card-text position-absolute top-50 bottom-50 translate-middle-y count">Count :</p>
-                            <p class="card-text position-absolute fw-bold fs-5 text-center number">120</p>
+                            <p class="card-text position-absolute fw-bold fs-5 text-center number item-number"></p>
                         </div>
                     </div>
                 </div>
@@ -98,21 +98,21 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title text-center fs-3 fw-bold">Orders</h5>
+                            <h5 class="card-title text-center fs-3 fw-bold title">Orders</h5>
                             <p class="card-text position-absolute top-50 bottom-50 translate-middle-y count">Count :</p>
-                            <p class="card-text position-absolute fw-bold fs-5 text-center number">30</p>
+                            <p class="card-text position-absolute fw-bold fs-5 text-center number">2</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row position-absolute description-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+        <div class="position-absolute description-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div class="card mb-3 position-relative rounded-5 cust-desc">
                 <div class="row g-0">
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title position-absolute desc-tittle">Today Customers</h5>
-                            <p class="card-text position-absolute text-center fw-bold fs-5 text-primary desc-num">10</p>
+                            <p class="card-text position-absolute text-center fw-bold fs-5 text-primary desc-num">1</p>
                         </div>
                     </div>
                     <div class="col-md-4 position-absolute top-50 end-0 bottom-50  translate-middle desc-img">
@@ -125,7 +125,7 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title position-absolute desc-tittle">New Products</h5>
-                            <p class="card-text position-absolute text-center fw-bold fs-5 text-primary desc-num">6</p>
+                            <p class="card-text position-absolute text-center fw-bold fs-5 text-primary desc-num">1</p>
                         </div>
                     </div>
                     <div class="col-md-4 position-absolute top-50 end-0 bottom-50  translate-middle desc-img">
@@ -138,7 +138,7 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title position-absolute desc-tittle">Today Orders</h5>
-                            <p class="card-text position-absolute text-center fw-bold fs-5 text-primary desc-num">0</p>
+                            <p class="card-text position-absolute text-center fw-bold fs-5 text-primary desc-num">1</p>
                         </div>
                     </div>
                     <div class="col-md-4 cart-image position-absolute top-50 end-0 bottom-50  translate-middle desc-img">
@@ -154,7 +154,7 @@
                         <h5 class="card-title position-absolute top-50 bottom-50 end-0 start-50 translate-middle fs-3 fw-bold setting-tittle">Setting</h5>
                     </div>
                 </div>
-                <div class="col-md-4 position-absolute top-50 end-0 bottom-50  translate-middle setting-img">
+                <div class="col-md-4 position-absolute top-50 bottom-50  translate-middle setting-img">
                     <img src="access/images/setting.png" class="img-fluid rounded-start" alt="...">
                 </div>
             </div>
@@ -162,7 +162,7 @@
     </div>
 
 <!--    Customer Content-->
-    <div class="card home-card border-0"  id="customer_content" style="width: 100vw; height: 13vh">
+    <div class="card home-card border-0 main-cust-card col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"  id="customer_content" style="width: 100vw; height: 13vh">
         <div class="card card-size position-absolute border-0 c-card">
             <img src="access/images/customers.png" class="img-fluid rounded-start position-absolute cust-img" alt="...">
             <h5 class="card-title text-center fs-3 fw-bold position-absolute cust-tittle">Customers</h5>
@@ -255,7 +255,7 @@
                     <h5 class="fs-6 fw-bold position-absolute top-50 bottom-0 end-50 translate-middle">Customer Search</h5>
                 </div>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2 position-absolute start-50 end-50 translate-middle-x" type="search" placeholder="Search" aria-label="Search" style="width: 400px">
+                    <input class="form-control me-2 position-absolute start-50 end-50 translate-middle-x input" type="search" placeholder="Search" aria-label="Search" style="width: 400px">
                     <button class="btn btn-outline-success position-absolute search-button" type="submit">Search</button>
                 </form>
             </div>

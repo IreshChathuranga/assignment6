@@ -1,6 +1,4 @@
-html{
-    overflow: hidden;
-}
+
 .my-navbar{
     height: 65px;
     background-color: #E71864;
@@ -25,7 +23,7 @@ html{
     left: 50px;
 }
 .cust-card{
-    max-width: 500px;
+    width: 500px;
     height: 170px;
     background-color: rgba(231, 24, 165, 0.49);
 }
@@ -48,7 +46,7 @@ html{
     margin: auto;
 }
 .item-card{
-    max-width: 500px;
+    width: 500px;
     height: 170px;
     background-color: rgba(162, 15, 181, 0.5);
 }
@@ -61,7 +59,7 @@ html{
     height: 120px;
 }
 .cart-card{
-    max-width: 500px;
+    width: 500px;
     height: 170px;
     background-color: rgba(199, 15, 70, 0.49);
 }
@@ -116,25 +114,89 @@ html{
     height: 30px;
 }
 .setting-img{
+    left: -70px;
     width: 50px;
     height: 50px;
 }
 @media all and (max-width: 1055px){
-    /*.main-container{*/
-    /*    width: 400px;*/
-    /*    height: 480px;*/
-    /*    top: 7px;*/
-    /*    left: 50px;*/
-    /*}*/
-    .description-container{
-        /*width: 200px;*/
-        /*height: 480px;*/
-        /*top: 7px;*/
-        right: 0px;
+    .main-container{
+        width: 90%;
+        left: 0;
+        right: 0;
+        margin: auto;
     }
-/*    .cust-desc{*/
-/*        width: 500px;*/
-/*        height: 170px;*/
-/*        border: 1px solid #E718A5;*/
-/*    }*/
+    .description-container{
+        width: 90%;
+        top: 580px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .setting-card{
+        top: 1150px;
+    }
+    .cust-card{
+        width: 100%;
+    }
+    .item-card{
+        width: 100%;
+    }
+    .cart-card{
+        width: 100%;
+    }
+    .cust-desc{
+        width: 100%;
+    }
+    .item-desc{
+        width: 100%;
+    }
+    .cart-desc{
+        width: 100%;
+    }
+}
+@media all and (max-width: 991px){
+    .my-icon{
+        position: absolute;
+    }
+}
+@media all and (max-width: 768px){
+    .img-card{
+        width: 170px;
+    }
+    .itemimg-card{
+        width: 170px;
+    }
+    .cartimg-card{
+        width: 170px;
+    }
+    .count{
+        left: 200px;
+    }
+    .title{
+        position: absolute;
+        top: 0px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}
+@media all and (max-width: 530px){
+    .img-card {
+        display: none;
+    }
+    .itemimg-card{
+        display: none;
+    }
+    .cartimg-card{
+        display: none;
+    }
+    .count{
+        left: 40px;
+    }
+    .desc-tittle{
+        left: 60px;
+    }
+    .desc-num{
+        left: 100px;
+    }
 }
