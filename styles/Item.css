@@ -88,3 +88,8 @@ body{
     width: 500px;
     height: 600px;
 }
+@media all and (max-width: 1055px){
+    .item-table-card{
+        width:90%;
+    }
+}

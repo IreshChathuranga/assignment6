@@ -1,5 +1,8 @@
-
+body{
+    overflow-x: hidden;
+}
 .my-navbar{
+    width: 100%;
     height: 65px;
     background-color: #E71864;
 }

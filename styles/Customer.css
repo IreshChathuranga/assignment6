@@ -1,4 +1,3 @@
-
 body{
     width: 100vw;
     height: 100vh;
@@ -44,6 +43,9 @@ body{
     background-color: rgba(217,217,217,0.66);
     top: 335px;
 }
+.add-customer{
+    width: 200px;
+}
 .add-img{
     max-width: 22px;
     height: 22px;
@@ -59,6 +61,9 @@ body{
 }
 .custtittlebar{
     background-color: #E718A5;
+}
+.input{
+    width: 400px;
 }
 .search-button{
     width: 100px;
@@ -77,6 +82,9 @@ body{
     right: 30px;
     bottom: 80px;
     background-color: transparent;
+}
+.update-cust-btn{
+    width: 170px;
 }
 .customer-delete-btn{
     width: 170px;
@@ -101,5 +109,32 @@ body{
     }
     .input{
         width: 200px;
+        height: 30px;
+    }
+    .search-button {
+        width: 70px !important;
+        height: 20px !important;
+        bottom: 30px;
+        left: 0px;
+        right: 0;
+        padding: 0;
+        font-size: 10px;
+    }
+    .custtittlebar>h5{
+        width: 200px;
+        left: 180px;
+    }
+    .add-customer{
+        width: 150px;
+    }
+    .add-img{
+        display: none;
+    }
+    .update-cust-btn{
+        width: 120px;
+        left: 80px;
+    }
+    .customer-delete-btn{
+        width: 120px;
     }
 }
